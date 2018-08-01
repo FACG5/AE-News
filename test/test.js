@@ -1,6 +1,6 @@
 const test = require('tape');
 const supertest = require('supertest');
-const router = require('../src/router');
+const router = require('../src/handler');
 
 test('Home routes', (t) => {
   supertest(router)
