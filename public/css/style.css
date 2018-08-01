@@ -55,10 +55,21 @@ p{
 }
 
 body{
-	background: url('../public/img/5141.jpg') repeat;
+	background: url('../img/5141.jpg') repeat;
 	font-family: Cairo;
 	color: #fff;
 	font-size: 15px;
+}
+#loading{
+
+	width: 50px;
+	margin: 0 auto;
+	display: block;
+	margin-bottom: 20px;
+}
+#viewsection h1{
+text-align: center;
+
 }
 #left{
 	font-size: 60px;
