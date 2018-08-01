@@ -55,12 +55,17 @@ const getData = (req, res) => {
           res.writeHead(response.statusCode);
           res.end(response.statusMessage);
         } else {
-          res.end(JSON.stringify(data));
+          if(data.articles.length!=0){res.end(JSON.stringify(data));}
+          else{
+            res.writeHead(404);
+            res.end("Choose Valid Country");
+          }
+          
         }
       });
     } else {
       res.writeHead(500, { 'Content-Type': 'text/html' });
-      res.end('<h1>Internal server Error</h1>');
+ res.end("Choose Country ! ")
     }
   });
 };

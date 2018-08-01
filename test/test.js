@@ -43,11 +43,10 @@ test('Test for get news from Api', (t) => {
   supertest(router)
     .post('/get')
     .send('dfdf')
-    .expect(200)
+    .expect(404)
     .end((err, res) => {
       t.error(err);
       t.equal(typeof res, 'object', 'Response Should Be Array');
-      t.equal(JSON.parse(res.text).articles.length, 0, 'length is 20');
       t.end();
     });
 });
@@ -62,7 +61,7 @@ test('Test FOR POST without body ', (t) => {
       t.equal(res.status, 500, 'Response Status is 403');
       t.equal(
         res.text,
-        '<h1>Internal server Error</h1>',
+        'Choose Country ! ',
         'Response Is Internal Server Error',
       );
 
