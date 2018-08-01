@@ -181,11 +181,9 @@ header{
     border: 1px solid #fff;
 }
 #viewsection{
-	/* display: grid;
-	grid-template-columns: auto auto auto;
-	grid-gap: 20px; */
 	width: 80%;
 	margin: 0 auto;
+	position: relative;
 }
 #viewsection .view-item{
 	padding: 20px 5px 20px 10px;
@@ -228,8 +226,8 @@ header{
 	border: 1px solid #0d9e8d;
 }
 #viewsection .view-item a:hover {
-	background: #0d9e8d;
-	color: #fff;
+	background:#fff;
+	color: #0d9e8d;
 	box-shadow:2px 2px 3px 1px #5d5346;
 	font-size:12px;
 	letter-spacing: 1px;
@@ -238,6 +236,67 @@ header{
 	font-weight: bold;
 	transition: all 0.3s;
 	border: 1px solid #0d9e8d;
+}
+#viewsection .more{
+	position: absolute;
+	min-height: 350px;
+	min-width: 100%;
+	margin: 0 auto;
+	/* background:linear-gradient(to top left,  #7b6c57, #ffeed9); */
+	top:0;
+	color: #3a3632;
+	background: #fff;
+	text-align: center;
+	box-shadow: 5px 5px 10px 10px rgba(36, 26, 11, 0.1);
+	text-align: left;
+	border-radius: 20px;
+	animation: animate 0.5s;
+
+}
+@keyframes animate {
+	from {
+	  top: -500px;
+	  opacity: 0;
+	}
+	to {
+		top:-200;
+		opacity: 0.5;
+	  }
+	to {
+	  top: 0;
+	  opacity: 1;
+	}
+  }
+#viewsection .more .more-head{
+	background: #459f8d;
+	padding: 20px 10px ;
+	border-bottom:2px solid #0d9e8d;
+	color: #fff;
+	letter-spacing: 1px;
+}
+#viewsection .more .more-body{
+	padding: 20px 20px ;
+	display: grid;
+	grid-template-columns: auto auto;
+	grid-gap: 20px;
+	
+}
+#viewsection .more .more-body img{
+	border: solid 3px #0d9e8d;
+	border-radius: 10%;
+	height: 200px;
+	width: 200px;
+}
+#viewsection .more .more-body p{
+	font-weight: bold;
+}
+#viewsection .more .more-body a{
+	float:right;
+	color: #0d9e8d;
+	margin-right: 5%;
+}
+#viewsection .view-item a:focus .more {
+	display: block
 }
 footer{
 	margin-top: 30px;
