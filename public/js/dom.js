@@ -19,13 +19,18 @@ const showNews = language => {
   });
 };
 showNews("us");
-submit.addEventListener("click", () => {
+submit.addEventListener("click", e => {
+  e.preventDefault();
   loading.style.display = "block";
 
   let input = document.getElementById("lang");
 
   const language = input.value;
   clearDiv(mainDiv);
+  let more = document.createElement("div")
+  more.setAttribute("id","more")
+  more.classList="more";
+  mainDiv.appendChild(more)
   showNews(language);
 });
 
@@ -34,12 +39,14 @@ const createNews = news => {
   article.classList = "view-item";
   let img = document.createElement("img");
   img.setAttribute("src", news.urlToImage);
+  img.setAttribute("alt", "image");
   let hr = document.createElement("hr");
   let title = document.createElement("h3");
   title.textContent = news.title;
   let viewMore = document.createElement("a");
   viewMore.textContent = "Read More";
-  viewMore.addEventListener("click", () => {
+  viewMore.addEventListener("click", e => {
+    e.preventDefault();
     readMore(news);
   });
   article.appendChild(img);
@@ -49,7 +56,43 @@ const createNews = news => {
   mainDiv.appendChild(hr);
 };
 const readMore = news => {
-  console.log(news.description);
+  let more = document.getElementById("more");
+  more.innerHTML = "";
+  let head = document.createElement("div");
+  head.classList = "more-head";
+  let headText = document.createElement("h3");
+  headText.textContent = news.title;
+  head.appendChild(headText);
+  more.appendChild(head);
+  let close = document.createElement("a");
+  close.textContent = "X";
+  head.appendChild(close);
+
+  let body = document.createElement("div");
+  body.classList = "more-body";
+  let divImg = document.createElement("div");
+  divImg.classList = "img";
+  let img = document.createElement("img");
+  img.setAttribute("src", news.urlToImage);
+  divImg.appendChild(img);
+  body.appendChild(divImg);
+
+  let details = document.createElement("div");
+  details.classList = "data";
+  let paragraph = document.createElement("p");
+  paragraph.textContent = news.description;
+  let link = document.createElement("a");
+  link.setAttribute("href", news.url);
+  link.textContent = "Go to Origin site";
+  details.appendChild(paragraph);
+  details.appendChild(link);
+  body.appendChild(details);
+  more.appendChild(body);
+  more.style.display = "block";
+
+  close.addEventListener("click", e => {
+    more.style.display = "none";
+  });
 };
 
 const clearDiv = div => {

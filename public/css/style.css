@@ -49,6 +49,7 @@ p{
 #head{
 	width: 950px;
 	margin: 16px auto;
+	min-height: 100vh;
 	background-color: #867661;
 	padding: 20px 20px;
 	box-shadow: 0 4px 6px #000000;
@@ -216,6 +217,7 @@ header{
 #viewsection .view-item a {
 	background: #0d9e8d;
 	color: #fff;
+	width: 140px;
 	box-shadow:2px 2px 3px 1px #5d5346;
 	font-size:12px;
 	letter-spacing: 1px;
@@ -243,7 +245,6 @@ header{
 	min-width: 100%;
 	margin: 0 auto;
 	/* background:linear-gradient(to top left,  #7b6c57, #ffeed9); */
-	top:0;
 	color: #3a3632;
 	background: #fff;
 	text-align: center;
@@ -251,6 +252,19 @@ header{
 	text-align: left;
 	border-radius: 20px;
 	animation: animate 0.5s;
+	display: none;
+
+}
+.more .more-head a {
+float: right;
+font-weight: bold;
+cursor: pointer;
+position: absolute;
+top: 0;
+right: 0;
+color: rgb(255, 0, 0);
+margin-right: 2%;
+
 
 }
 @keyframes animate {
@@ -273,6 +287,7 @@ header{
 	border-bottom:2px solid #0d9e8d;
 	color: #fff;
 	letter-spacing: 1px;
+	position: relative;
 }
 #viewsection .more .more-body{
 	padding: 20px 20px ;
