@@ -1,6 +1,9 @@
+const getElementById = (id)=>{
 
-
-document.getElementById('submit').addEventListener('click', () => {
+  document.getElementById(id)
+}
+let submit =  document.getElementById('submit');
+submit.addEventListener('click', () => {
   let input = document.getElementById('lang');
   const language = input.value;
 

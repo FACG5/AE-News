@@ -59,8 +59,8 @@ const getData = (req, res) => {
         }
       });
     } else {
-      res.writeHead(403, { 'Content-Type': 'text/html' });
-      res.end('<h1>Forbidden , 403 Error  !</h1>');
+      res.writeHead(500, { 'Content-Type': 'text/html' });
+      res.end('<h1>Internal server Error</h1>');
     }
   });
 };
