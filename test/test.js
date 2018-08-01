@@ -62,8 +62,8 @@ test('Test FOR POST without body ', (t) => {
       t.equal(res.status, 500, 'Response Status is 403');
       t.equal(
         res.text,
-        '<h1>Forbidden , 403 Error  !</h1>',
-        'Response text is forbidden',
+        '<h1>Internal server Error</h1>',
+        'Response Is Internal Server Error',
       );
 
       t.end();
