@@ -12,6 +12,7 @@ function handlePage(requiredPage, req, res) {
     path.join(__dirname, '..', pageName[requiredPage]),
     (err, file) => {
       if (err) {
+        // rreadHead
         res.end(err.message);
       } else {
         res.end(file);
