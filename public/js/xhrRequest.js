@@ -3,10 +3,19 @@ const xhrRequest = (url, data, cb) => {
   xhr.onreadystatechange = () => {
     if (xhr.readyState === 4) {
       if (xhr.status === 200) {
-        const result = JSON.parse(xhr.responseText);
-        cb(null, result);
+       const result = JSON.parse(xhr.responseText);
+       if(result.err){
+        cb(new TypeError(result.err));
+
+       }
+       else{
+         
+        cb(null, JSON.parse(result.news));
+        
+
+       }
       } else {
-        cb(new TypeError(xhr.responseText));
+        cb(new TypeError(result.err));
       }
     }
   };

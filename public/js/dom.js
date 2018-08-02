@@ -3,7 +3,7 @@ let submit = document.getElementById("submit");
 const showNews = language => {
   let loading = document.getElementById("loading");
 
-  xhrRequest("/get", language, (err, result) => {
+  xhrRequest("/getNews", language, (err, result) => {
     if (err) {
       loading.style.display = "none";
 
@@ -27,10 +27,10 @@ submit.addEventListener("click", e => {
 
   const language = input.value;
   clearDiv(mainDiv);
-  let more = document.createElement("div")
-  more.setAttribute("id","more")
-  more.classList="more";
-  mainDiv.appendChild(more)
+  let more = document.createElement("div");
+  more.setAttribute("id", "more");
+  more.classList = "more";
+  mainDiv.appendChild(more);
   showNews(language);
 });
 
