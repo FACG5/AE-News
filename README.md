@@ -2,7 +2,7 @@
 
 >>  By : Ebraheem and Asala .
 
-[![Build Status]()
+[![Build Status](https://travis-ci.com/FACG5/AE-News.svg?branch=master)
 
 
 
