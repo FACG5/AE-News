@@ -8,7 +8,6 @@ test("Home routes", t => {
     .expect(200)
     .end((err, res) => {
       t.error(err);
-      t.equal(res.statusCode, 200, "Should Return 200");
       t.end();
     });
 });
@@ -33,7 +32,6 @@ test("Test for get news from Api", t => {
     .end((err, res) => {
       t.error(err);
       t.equal(typeof res, "object", "Response Should Be Array");
-      // t.equal(JSON.parse(res.text).articles.length, 20, 'length is 20');
 
       t.end();
     });
